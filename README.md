@@ -26,7 +26,7 @@ tabele date {
 
 city_id int [ref: city.id, not null]
 
-date date [not null]
+date str [not null]
 
 }
 
