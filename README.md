@@ -9,13 +9,33 @@
 
 ### table - city
 
-column - **id | city_name | prefectures**
+table city {
+
+id int [pk]
+
+city_name str [not null, unique]
+
+prefectures str [not null]
+
+}
  
 
 ### table - date
 
-column - **id | date**
+tabele date {
+
+city_id int [ref: city.id, not null]
+
+date date [not null]
+
+}
 
 ### table - population
 
-column - **id | population**
+table population {
+
+city_id  int [ref: city.id, not null]
+
+population int  [not null]
+
+}
