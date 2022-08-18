@@ -13,18 +13,6 @@ module.exports = {
       .limit(limit);
   },
 
-  createCity(city) {
-    return knex.insert(city).into("city");
-  },
-
-  updateCity(id, city) {
-    return knex("city")
-      .where("id", id)
-      .update(city)
-      .returning("id")
-      .then((res) => res[0].id);
-  },
-
   getAllDate(limit = 100) {
     return knex
       .select({
@@ -34,10 +22,6 @@ module.exports = {
       .from("date")
       .limit(limit);
   },
-
-  //   createDate(date) {
-  //     return knex.insert(date).into("date");
-  //   },
 
   getAllPopulation(limit = 100) {
     return knex
@@ -62,5 +46,21 @@ module.exports = {
       .join("date", { "city.id": "date.city_id" })
       .join("population", { "city.id": "population.city_id" })
       .limit(limit);
+  },
+
+  createCity(city) {
+    return knex.insert(city).into("city");
+  },
+
+  updateCity(id, city) {
+    return knex("city")
+      .where("id", id)
+      .update(city)
+      .returning("id")
+      .then((res) => res[0].id);
+  },
+
+  deleteCity(id) {
+    return knex("city").where("id", id).del();
   },
 };

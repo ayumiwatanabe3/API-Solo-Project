@@ -57,7 +57,6 @@ describe("city", () => {
       expect(cities.length).to.be.at.most(3);
     });
   });
-  // getByIdは動くか
   // post
   describe("createCity", () => {
     const newId = 9999;
@@ -113,6 +112,24 @@ describe("city", () => {
     });
   });
   // delete
+  describe("deleteCity", () => {
+    it("should delete the city", async () => {
+      const sample = {
+        id: 200,
+        city_name: "江戸川区",
+        prefectures: "東京都",
+      };
+
+      await knex("city").insert(sample).catch(console.error);
+      const result = await knex("city").select("city_name").where("id", 200);
+      expect(result[0].city_name).to.eq("江戸川区");
+
+      const beforeArr = await models.getAllCity();
+      await models.deleteCity(sample.id);
+      const afterArr = await models.getAllCity();
+      expect(afterArr.length).to.eq(beforeArr.length - 1);
+    });
+  });
 });
 
 describe("date", () => {

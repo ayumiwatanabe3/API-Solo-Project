@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ordinance_designated_city DB</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="title">
+      ordinance_designated_city（政令指定都市） API
+    </div>
+
+    <!-- <a href="http://localhost:4000/getAllCity">AllCity</a> -->
+    <a href="<%= link1.href %>"><%= link1.text %></a>
+    <a href="<%= link2.href %>"><%= link2.text %></a>
+    <a href="<%= link3.href %>"><%= link3.text %></a>
+
+    <a href="http://localhost:4000/getAll">All</a>
+
+
+
+    <!--投稿-->
+    <form action="/postCity" method="POST">
+        <input type="text" name="addText" style="width:250px; height:15px;" placeholder="オブジェクト形式で入力してください">
+        <button type="submit">更新</button>
+    </form>
+    <!--変更-->
+    <!-- <form action="/update" method="POST">
+        <input type="text" name="updateProgram">
+        <button type="submit">変更</button> -->
+    </form>
+    <!--削除-->
+      <form action="/deleteCity" method="POST">
+        <input type="text" name="addText" style="width:250px; height:15px;" placeholder="削除したいidを入力してください">
+        <button type="submit">削除</button>
+      <!-- <form action="/delete" method="POST"> 
+        <input id="one" type="radio" name="number" value="0">
+        <label for="one">1</label>
+        <input id="two" type="radio" name="number" value="1">
+        <label for="two">2</label>
+        <input for="three" type="radio" name="number" value="2">
+        <label for="three">3</label>
+        <button type="submit">削除</button> -->
+    </form>
+
+    <p></p>
+    <a href="https://github.com/ayumiwatanabe3/API-Solo-Project.git">GitHubリポジトリ</a>
+  </body>
+</html>
