@@ -6,4 +6,4 @@
 
 ## テーブル構成
 
-![pic](/Users/watanabeayumi/Desktop/ITI/soloProject/DB構成.png)
+![pic](./DB%E6%A7%8B%E6%88%90.png)
