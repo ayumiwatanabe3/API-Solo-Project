@@ -1,10 +1,5 @@
 const express = require("express");
-const fs = require("fs");
-// const knex = require("knex");
-// const knexfile = require("./knexfile");
 const models = require("./model");
-
-// const path = require("path");
 
 const app = express();
 app.use(express.json());
@@ -14,12 +9,7 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-// app.get("/", (req, res) => {
-//   res.render("pages/index");
-// });
-
 app.get("/", (req, res) => {
-  // res.sendFile(__dirname + "/index.html");
   const msg = "トップページです!";
   res.render("index.ejs", {
     content: msg,

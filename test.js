@@ -31,7 +31,6 @@ describe("city", () => {
       .catch(console.error);
   });
 
-  // cityテーブルはあるか
   describe("setup", () => {
     it("should connect to database", () => {
       knex.raw("select 1 as result").catch(() => {
@@ -45,7 +44,6 @@ describe("city", () => {
         .catch(() => assert.fail("city table is not found."));
     });
   });
-  // getAllCityは動くか
   describe("getAllCity", () => {
     it("should return an array of city", async () => {
       const cities = await models.getAllCity();
@@ -57,7 +55,6 @@ describe("city", () => {
       expect(cities.length).to.be.at.most(3);
     });
   });
-  // post
   describe("createCity", () => {
     const newId = 9999;
 
@@ -80,7 +77,6 @@ describe("city", () => {
     });
   });
 
-  // patch
   describe("updateCity", () => {
     describe("with valid parameters", () => {
       after(async () => {
@@ -111,7 +107,6 @@ describe("city", () => {
       });
     });
   });
-  // delete
   describe("deleteCity", () => {
     it("should delete the city", async () => {
       const sample = {
@@ -252,7 +247,6 @@ describe("population", () => {
 });
 
 describe("allColumn", () => {
-  // joinさせて、全てのデータを取得
   it("should return an array of allColumn", async () => {
     const allColumnData = await models.getAllColumn();
     expect(allColumnData).to.be.an.instanceof(Array);

@@ -1,41 +1,9 @@
-# API-Solo-Project
-
-このリポジトリはCode Chrysalisの生徒であるときに作成しました.
+このリポジトリは Code Chrysalis の生徒であるときに作成しました.
 
 (This was created during my time as a student at Code Chrysalis）
 
+# ordinance_designated_city（政令指定都市） API
 
-### DB - ordinance_designated_city
+## テーブル構成
 
-### table - city
-
-table city {
-
-id int [pk]
-
-city_name str [not null, unique]
-
-prefectures str [not null]
-
-}
- 
-
-### table - date
-
-tabele date {
-
-city_id int [ref: city.id, not null]
-
-date str [not null]
-
-}
-
-### table - population
-
-table population {
-
-city_id  int [ref: city.id, not null]
-
-population int  [not null]
-
-}
+![pic](/Users/watanabeayumi/Desktop/ITI/soloProject/DB構成.png)
